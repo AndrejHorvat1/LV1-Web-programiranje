@@ -1,0 +1,330 @@
+/* Reset and General Styles */
+*,
+*::before {
+    transition: .5s;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: white;
+}
+
+p {
+    line-height: 1.5;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+span.inline-flex {
+    display: contents;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Header and Footer Styles */
+.header,
+.footer {
+    width: 100%;
+    padding: 1.5vh 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    background: white;
+}
+
+.header {
+    position: sticky;
+    top: 0;
+    box-shadow: 0 2px 80px 0 #e7e7e7;
+}
+
+@media screen and (max-width: 900px) {
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0; 
+    }
+
+    .navbar a {
+        margin-left: 0; 
+        margin-bottom: 10px;  
+    }
+}
+
+/* Navbar and Button Styles */
+.navbar a {
+    position: relative;
+    color: black;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+.navbar a:hover,
+#selected  {
+    color: #5E3BEE;
+}
+
+button {
+    padding: 18px 30px;
+    border: 2px solid #5E3BEE; 
+    background-color: transparent;
+    color: #5E3BEE; 
+    font-size: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: #5E3BEE; 
+    color: white; 
+    text-decoration: none;
+}
+
+/* Logo Styles */
+.logo {
+    max-width: 180px;
+    padding: 0 0;
+    margin: 0 0;
+    height: 40px;
+}
+
+/* Selected Item Styles */
+#selected::before {
+    background: #282938;
+}
+
+#selected:hover {
+    color: #282938;
+}
+
+/* Page Structure */
+.blue-background {
+    background: #F5FCFF;
+}
+
+.page {
+    min-height: 50vh;
+    padding: 6vh 0;
+}
+
+.col-container,
+.row-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 6vh 3vw;
+}
+
+.col-container {
+    flex-direction: row;
+}
+
+.row-container {
+    flex-direction: column;
+}
+
+.col-1,
+.col-2,
+.col-3,
+.col-4 {
+    flex: 1;
+}
+
+.col-2 *,
+.col-3 *,
+.col-4 * {
+    margin: 1vh 0.25vw;
+}
+
+.row-1,
+.col-container.row {
+    margin: 1vh 0.25vw;
+    width: 100%;
+}
+
+/* Card Styles */
+.card {
+    margin: 0.5rem;
+    border-radius: 10px;
+}
+
+.title {
+    font-size: 4rem;
+    font-weight: bold;
+    font-style: "#282938";
+}
+
+.card-dark-shadow {
+    box-shadow: #00000030 0 10px 20px 0;
+}
+
+.card-purple-border {
+    border: 1px solid #006B6A;
+    border-width: 2px;
+}
+
+/* Icon Styles */
+.icon {
+    padding: 0.5rem;
+    max-width: 4vw;
+    height: auto;
+    background: white;
+    -webkit-box-shadow: 0 0 20px #00000021;
+    box-shadow: 0 0 20px #00000021;
+    border-radius: 10px;
+}
+
+.inline-icon-sm {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0 0.5rem;
+}
+
+.inline-icon-x {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 1rem;
+    border-radius: 50%;
+}
+
+/* Form Styles */
+.form-container {
+    width: 60%;
+    padding: 3vh 0;
+    flex-direction: column;
+}
+.form-row-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+   
+}
+
+.form-input {
+    padding: 1rem;
+    margin: 0.25rem;
+    border-radius: 5px;
+    border: 1px solid  #5E3BEE;
+    width: 100%; 
+    margin-top: 10px;
+    
+}
+.form-input[name="first_name"],
+.form-input[name="last_name"] {
+    width: calc(50% - 5px); 
+}
+
+.form-input[name="email"],
+.form-input[name="phone"] {
+    width: calc(50% - 5px); 
+}
+
+/* Horizontal Rule Styles */
+hr.solid {
+    border-top: 3px solid #bbb;
+}
+
+/* Textarea Styles */
+textarea {
+    height: 210px;
+}
+
+/* Special Button Styles */
+.special-button {
+    display: flex;
+    max-width: 100%;
+    padding: 16px 16px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    color: white;
+    background-color: #E62872;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px;
+    gap: 16px;
+    max-height: 75px;
+    font-size: 18px;
+    border-radius: 12px;
+    line-height: 150%;
+}
+
+.special-button img {
+    width: 32px;
+    height: auto;
+}
+
+/* Submit Button Styles */
+.button-submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.button-submit > button {
+    padding: 19px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 1240px) {
+    .logo {
+        max-width: 25vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .navbar a,
+    button {
+        font-size: 1rem;
+        margin: 20px 20px 20px 20px;
+    }
+
+    .footer p,
+    #footerLinks,
+    #footerLinks a {
+        width: 100vw;
+    }
+    .form-row-container {
+        flex-direction: column; 
+    }
+
+    
+    .form-input[name="first_name"],
+    .form-input[name="last_name"],
+    .form-input[name="email"],
+    .form-input[name="phone"] {
+        width: 100%; 
+    }
+}
